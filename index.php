@@ -1,6 +1,6 @@
 <?php
 ob_start();
-define('API_KEY','243730468:AAES-D7R5BF1Mgy6oD_vip9Ag7C8ofXdxoM');
+define('API_KEY','243730468:AAEjLRvWLpy9cciH9aljUTPWR3YrsFxgw1c');
 $admin = "50334606";
 function bot($method,$datas=[]){
     $url = "https://api.telegram.org/bot".API_KEY."/".$method;
@@ -30,7 +30,7 @@ if (isset($update->edited_message)){
   $eid = $editm->message_id;
   $edname = $editm->from->first_name;
   $jsu = json_decode(file_get_contents(__DIR__.'/users/'.$eid.'.json'));
-  $text = "<b>".$edname."</b>\n♨️ من دیدم که چی گفتی بازم ادیت کنی میفهمم
+  $text = "<b>".$edname."</b>\n♨ ️من دیدم چی گفتی 😐 بازم ادیت کنی میگم  😐
   گفتی:
 ".$jsu;
   $id = $update->edited_message->chat->id;
@@ -53,7 +53,7 @@ if (isset($update->edited_message)){
     'reply_markup'=>json_encode([
       'inline_keyboard'=>[
         [
-          ['text'=>'MRKEYNO','url'=>'https://telegram.me/MRKEYNO']
+          ['text'=>'ExitSupport','url'=>'https://telegram.me/ExitSupport_bot']
         ],
         [
           ['text'=>'ExitTM','url'=>'https://telegram.me/ExitTB']
@@ -73,7 +73,7 @@ if (isset($update->edited_message)){
 }elseif(isset($update->message-> new_chat_member )){
 bot('sendMessage',[
       'chat_id'=>$chat_id,
-      'text'=>"♨️ به گروه خوش آمدید ♨️"
+      'text'=>"♨️ به گروه خوش اومدی ♨️"
     ]);
 }
   
